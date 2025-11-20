@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveOnPremise - Sistema de Almacenamiento Local</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">📁</div>
+                <h1>DriveOnPremise</h1>
+            </div>
+            <nav class="nav">
+                <div class="nav-actions">
+                    <!-- Botón de modo oscuro -->
+                    <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+                <div class="user-info">
+                    <span id="username">Cargando...</span>
+                    <div class="user-avatar">👤</div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Navegación</h3>
+                <ul class="sidebar-menu">
+                    <li class="active" data-section="home"><a href="#"><span>🏠</span> Inicio</a></li>
+                    <li data-section="files"><a href="#"><span>📄</span> Mis archivos</a></li>
+                    <li data-section="recent"><a href="#"><span>🔄</span> Recientes</a></li>
+                    <li data-section="starred"><a href="#"><span>⭐</span> Destacados</a></li>
+                    <li data-section="trash"><a href="#"><span>🗑️</span> Papelera</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Carpetas</h3>
+                <ul class="sidebar-menu" id="foldersList">
+                    <!-- Las carpetas se cargarán aquí dinámicamente -->
+                </ul>
+                <button class="btn btn-outline btn-small" id="newFolderSidebarBtn"
+                    style="width: 100%; margin-top: 0.5rem;">
+                    <span>➕</span> Nueva carpeta
+                </button>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <section class="content-area">
+            <!-- Toolbar -->
+            <div class="toolbar">
+                <div class="toolbar-left">
+                    <!-- Cambia este botón para que sea más descriptivo -->
+                    <button class="btn btn-primary" id="showUploadBtn">
+                        <span>📤</span> Mostrar área de subida
+                    </button>
+                    <button class="btn btn-secondary" id="createFolderBtn">
+                        <span>📁</span> Nueva carpeta
+                    </button>
+                    <div class="current-folder" id="currentFolderInfo">
+                        <span id="currentFolderName">Mis archivos</span>
+                    </div>
+                </div>
+                <div class="toolbar-right">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Buscar archivos...">
+                        <span>🔍</span>
+                    </div>
+                    <div class="view-options">
+                        <button class="view-btn active" data-view="grid" title="Vista de cuadrícula">⏹️</button>
+                        <button class="view-btn" data-view="list" title="Vista de lista">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="upload-section card" id="uploadSection">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📤</div>
+                    <h3>Arrastra tus archivos aquí</h3>
+                    <p>o haz clic para seleccionar</p>
+                    <input type="file" id="fileInput" multiple style="display: none;">
+                    <button class="btn btn-outline" id="selectFilesBtn">Seleccionar archivos</button>
+                    <div class="upload-info">
+                        <small>Límite: 50MB por archivo • Formatos: PDF, imágenes, documentos, audio, video</small>
+                    </div>
+                </div>
+                <div class="upload-progress" id="uploadProgress" style="display: none;">
+                    <h4>Subiendo archivos...</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="upload-details" id="uploadDetails"></div>
+                </div>
+            </div>
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb" id="breadcrumb" style="display: none;">
+                <button class="breadcrumb-item" data-folder-id="1">Mis archivos</button>
+            </div>
+
+            <!-- Files Grid -->
+            <div class="files-section">
+                <div class="section-header">
+                    <h2 id="sectionTitle">Mis archivos</h2>
+                    <div class="section-info">
+                        <span id="fileCount">0 archivos</span>
+                    </div>
+                </div>
+
+                <div class="files-grid" id="filesGrid">
+                    <!-- Los archivos se cargarán aquí dinámicamente -->
+                </div>
+
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">📁</div>
+                    <h3>No hay archivos aún</h3>
+                    <p>Comienza subiendo tu primer archivo</p>
+                    <button class="btn btn-primary" id="emptyUploadBtn" style="margin-top: 1rem;">
+                        <span>📤</span> Subir primer archivo
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modales -->
+    <div class="modal" id="fileModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle">Información del archivo</h3>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <div class="modal" id="folderModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="folderModalTitle">Nueva carpeta</h3>
+            <div class="modal-body">
+                <input type="text" id="folderNameInput" placeholder="Nombre de la carpeta" class="modal-input">
+                <div class="modal-actions">
+                    <button class="btn btn-primary" id="confirmFolderBtn">Crear carpeta</button>
+                    <button class="btn btn-secondary" id="cancelFolderBtn">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación para vaciar papelera -->
+    <div class="modal" id="emptyTrashModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Vaciar papelera</h3>
+            <div class="modal-body">
+                <p>¿Estás seguro de que quieres vaciar la papelera? Esta acción no se puede deshacer y eliminará todos
+                    los archivos permanentemente.</p>
+                <div class="modal-actions">
+                    <button class="btn btn-danger" id="confirmEmptyTrashBtn">Sí, vaciar papelera</button>
+                    <button class="btn btn-secondary" id="cancelEmptyTrashBtn">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para eliminar carpeta -->
+    <div class="modal" id="deleteFolderModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="deleteFolderTitle">Eliminar Carpeta</h3>
+            <div class="modal-body">
+                <div id="folderDeleteInfo">
+                    <!-- La información se cargará dinámicamente -->
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-danger" id="confirmDeleteFolderBtn">Eliminar</button>
+                    <button class="btn btn-secondary" id="cancelDeleteFolderBtn">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

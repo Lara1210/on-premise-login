@@ -1,0 +1,230 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@drive.com",
+      "password": "$2a$10$yFCjqETbtZFU0mlSxxKaNe/aXgivhUMz0401acsEzs2XCRDyEi/Ta",
+      "storageUsed": 3807338,
+      "storageLimit": 10737418240,
+      "createdAt": "2025-11-13T03:27:42.276Z",
+      "permissions": [
+        "admin",
+        "upload",
+        "download",
+        "delete"
+      ]
+    },
+    {
+      "id": 1763604237634,
+      "username": "ange;",
+      "email": "ange;@drive.com",
+      "password": "$2a$10$WxyVzydeEhp9zsOTKnCc/OEqCZ1hODT1f2ncBk7Hz/W//WGyo8kZO",
+      "storageUsed": 6388350,
+      "storageLimit": 10737418240,
+      "createdAt": "2025-11-20T02:03:57.809Z",
+      "permissions": [
+        "upload",
+        "download",
+        "delete"
+      ]
+    },
+    {
+      "id": 1763605497914,
+      "username": "eduardo",
+      "email": "eduardo@drive.com",
+      "password": "$2a$10$mv5wYvrVz0pIVgbCIeq9Ie7LQmYjhy5mBOnSZJ5RGUnvDy/f1S1Hy",
+      "storageUsed": 0,
+      "storageLimit": 10737418240,
+      "createdAt": "2025-11-20T02:24:58.068Z",
+      "permissions": [
+        "upload",
+        "download",
+        "delete"
+      ]
+    },
+    {
+      "id": 1763652604947,
+      "username": "Lesho",
+      "email": "Lesho@drive.com",
+      "password": "$2a$10$vkI7cn0Z42jt7NXiRBcJLe4Y2bOfBKjsBaDQZSrGNfvlNPiMQiaSu",
+      "storageUsed": 1903669,
+      "storageLimit": 10737418240,
+      "createdAt": "2025-11-20T15:30:05.180Z",
+      "permissions": [
+        "upload",
+        "download",
+        "delete"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "id": 1763603872149,
+      "filename": "1763603872107-ChatGPT_Image_19_nov_2025__17_25_48.png",
+      "originalName": "ChatGPT Image 19 nov 2025, 17_25_48.png",
+      "size": 1903669,
+      "mimetype": "image/png",
+      "extension": ".png",
+      "uploadDate": "2025-11-20T01:57:52.149Z",
+      "folderId": 1,
+      "userId": 1,
+      "starred": false,
+      "inTrash": false
+    },
+    {
+      "id": 1763603872152,
+      "filename": "1763603872115-ChatGPT_Image_19_nov_2025__17_25_48.png",
+      "originalName": "ChatGPT Image 19 nov 2025, 17_25_48.png",
+      "size": 1903669,
+      "mimetype": "image/png",
+      "extension": ".png",
+      "uploadDate": "2025-11-20T01:57:52.152Z",
+      "folderId": 1,
+      "userId": 1,
+      "starred": false,
+      "inTrash": false
+    },
+    {
+      "id": 1763604572763,
+      "filename": "1763604572728-ChatGPT_Image_19_nov_2025__17_25_48.png",
+      "originalName": "ChatGPT Image 19 nov 2025, 17_25_48.png",
+      "size": 1903669,
+      "mimetype": "image/png",
+      "extension": ".png",
+      "uploadDate": "2025-11-20T02:09:32.763Z",
+      "folderId": 1,
+      "userId": 1763604237634,
+      "starred": true,
+      "inTrash": true,
+      "trashedAt": "2025-11-20T02:14:43.460Z"
+    },
+    {
+      "id": 1763604585082,
+      "filename": "1763604585075-Imagen_de_WhatsApp_2025_11_07_a_las_19_25_43_2d8847ef.jpg",
+      "originalName": "Imagen de WhatsApp 2025-11-07 a las 19.25.43_2d8847ef.jpg",
+      "size": 82555,
+      "mimetype": "image/jpeg",
+      "extension": ".jpg",
+      "uploadDate": "2025-11-20T02:09:45.082Z",
+      "folderId": 1,
+      "userId": 1763604237634,
+      "starred": false,
+      "inTrash": true,
+      "trashedAt": "2025-11-20T02:14:44.973Z"
+    },
+    {
+      "id": 1763604875099,
+      "filename": "1763604875095-Captura_de_pantalla_2025_11_12_201433.png",
+      "originalName": "Captura de pantalla 2025-11-12 201433.png",
+      "size": 211062,
+      "mimetype": "image/png",
+      "extension": ".png",
+      "uploadDate": "2025-11-20T02:14:35.099Z",
+      "folderId": 1,
+      "userId": 1763604237634,
+      "starred": false,
+      "inTrash": true,
+      "trashedAt": "2025-11-20T02:14:41.967Z"
+    },
+    {
+      "id": 1763604887822,
+      "filename": "1763604887775-ChatGPT_Image_19_nov_2025__17_25_48.png",
+      "originalName": "ChatGPT Image 19 nov 2025, 17_25_48.png",
+      "size": 1903669,
+      "mimetype": "image/png",
+      "extension": ".png",
+      "uploadDate": "2025-11-20T02:14:47.822Z",
+      "folderId": 1,
+      "userId": 1763604237634,
+      "starred": false,
+      "inTrash": false
+    },
+    {
+      "id": 1763604921301,
+      "filename": "1763604921281-ChatGPT_Image_19_nov_2025__17_25_48.png",
+      "originalName": "ChatGPT Image 19 nov 2025, 17_25_48.png",
+      "size": 1903669,
+      "mimetype": "image/png",
+      "extension": ".png",
+      "uploadDate": "2025-11-20T02:15:21.301Z",
+      "folderId": 1763604237810,
+      "userId": 1763604237634,
+      "starred": false,
+      "inTrash": false
+    },
+    {
+      "id": 1763604927340,
+      "filename": "1763604927335-Captura_de_pantalla_2025_11_12_201433.png",
+      "originalName": "Captura de pantalla 2025-11-12 201433.png",
+      "size": 211062,
+      "mimetype": "image/png",
+      "extension": ".png",
+      "uploadDate": "2025-11-20T02:15:27.340Z",
+      "folderId": 1763604914109,
+      "userId": 1763604237634,
+      "starred": true,
+      "inTrash": true,
+      "trashedAt": "2025-11-20T02:23:26.487Z"
+    },
+    {
+      "id": 1763605433493,
+      "filename": "1763605433489-Captura_de_pantalla_2025_11_14_165524.png",
+      "originalName": "Captura de pantalla 2025-11-14 165524.png",
+      "size": 172664,
+      "mimetype": "image/png",
+      "extension": ".png",
+      "uploadDate": "2025-11-20T02:23:53.493Z",
+      "folderId": 1,
+      "userId": 1763604237634,
+      "starred": false,
+      "inTrash": true,
+      "trashedAt": "2025-11-20T02:24:17.126Z"
+    },
+    {
+      "id": 1763652652115,
+      "filename": "1763652652065-22.png",
+      "originalName": "22.png",
+      "size": 1903669,
+      "mimetype": "image/png",
+      "extension": ".png",
+      "uploadDate": "2025-11-20T15:30:52.115Z",
+      "folderId": 1,
+      "userId": 1763652604947,
+      "starred": false,
+      "inTrash": false
+    }
+  ],
+  "folders": [
+    {
+      "id": 1,
+      "name": "Mis archivos",
+      "parentId": null,
+      "userId": 1,
+      "createdAt": "2025-11-13T03:27:42.277Z"
+    },
+    {
+      "id": 1763604237810,
+      "name": "Mis archivos",
+      "parentId": null,
+      "userId": 1763604237634,
+      "createdAt": "2025-11-20T02:03:57.809Z"
+    },
+    {
+      "id": 1763605498069,
+      "name": "Mis archivos",
+      "parentId": null,
+      "userId": 1763605497914,
+      "createdAt": "2025-11-20T02:24:58.068Z"
+    },
+    {
+      "id": 1763652605181,
+      "name": "Mis archivos",
+      "parentId": null,
+      "userId": 1763652604947,
+      "createdAt": "2025-11-20T15:30:05.180Z"
+    }
+  ],
+  "starred": [],
+  "trash": []
+}

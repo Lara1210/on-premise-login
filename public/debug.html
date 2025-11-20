@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Auth</title>
+</head>
+<body>
+    <h1>Debug de Autenticación</h1>
+    <div id="debugInfo"></div>
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const debugInfo = document.getElementById('debugInfo');
+            
+            const info = {
+                'Token en localStorage': localStorage.getItem('driveToken'),
+                'Usuario en localStorage': localStorage.getItem('driveUser'),
+                'Auth.isAuthenticated()': auth.isAuthenticated(),
+                'Auth.currentUser': auth.getCurrentUser(),
+                'Auth.token': auth.getToken()
+            };
+            
+            let html = '<h2>Estado de Autenticación</h2><ul>';
+            for (const [key, value] of Object.entries(info)) {
+                html += `<li><strong>${key}:</strong> ${JSON.stringify(value)}</li>`;
+            }
+            html += '</ul>';
+            
+            debugInfo.innerHTML = html;
+            
+            // Probar verificación de token
+            try {
+                const response = await fetch('/auth/verify');
+                const result = await response.json();
+                debugInfo.innerHTML += `<h2>Verificación de Token</h2><pre>${JSON.stringify(result, null, 2)}</pre>`;
+            } catch (error) {
+                debugInfo.innerHTML += `<h2>Error en verificación</h2><pre>${error}</pre>`;
+            }
+        });
+    </script>
+</body>
+</html>
