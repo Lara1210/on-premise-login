@@ -507,7 +507,7 @@ class DriveApp {
                     </div>
                     <div class="file-actions">
                         ${!isTrash ? `<button class="action-btn star-btn" data-filename="${file.filename}" title="${starTitle}">${starIcon}</button>` : ''}
-                        <button class="action-btn view-btn" data-filename="${file.filename}" title="${viewTitle}">${viewIcon}</button>
+                        <button class="action-btn file-view-btn" data-filename="${file.filename}" title="${viewTitle}">${viewIcon}</button>
                         ${isTrash ? `
                             <button class="action-btn restore-btn" data-filename="${file.filename}" title="Restaurar">↩️</button>
                             <button class="action-btn delete-permanent-btn" data-filename="${file.filename}" title="Eliminar permanentemente">🗑️</button>
@@ -526,7 +526,7 @@ class DriveApp {
                     <div class="file-info">${size} • ${uploadDate}</div>
                     <div class="file-actions">
                         ${!isTrash ? `<button class="action-btn star-btn" data-filename="${file.filename}" title="${starTitle}">${starIcon}</button>` : ''}
-                        <button class="action-btn view-btn" data-filename="${file.filename}" title="${viewTitle}">${viewIcon}</button>
+                        <button class="action-btn file-view-btn" data-filename="${file.filename}" title="${viewTitle}">${viewIcon}</button>
                         ${isTrash ? `
                             <button class="action-btn restore-btn" data-filename="${file.filename}" title="Restaurar">↩️</button>
                             <button class="action-btn delete-permanent-btn" data-filename="${file.filename}" title="Eliminar permanentemente">🗑️</button>
@@ -584,7 +584,7 @@ class DriveApp {
         });
 
         // Ver/Descargar
-        document.querySelectorAll('.view-btn').forEach(btn => {
+        document.querySelectorAll('.file-view-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const filename = btn.dataset.filename;
